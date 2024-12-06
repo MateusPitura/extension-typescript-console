@@ -18,35 +18,8 @@
     column-gap: 0.5rem;
 }
 
-.logger_bubble {
-    border-radius: 0.5rem;
-    border: 1px solid;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    cursor: pointer;
-    user-select: none;
-}
-
-.bg-blue {
-    background-color: #20a4f3;
-    color: #f6f7f8;
-    border-color: #f6f7f8;
-}
-
-.bg-red {
-    background-color: #ff3366;
-    color: #f6f7f8;
-    border-color: #f6f7f8;
-}
-
 .bg-white {
     background-color: #f6f7f8;
-    color: #011627;
-    border-color: #011627;
-}
-
-.bg-yellow {
-    background-color: #f2bb05;
     color: #011627;
     border-color: #011627;
 }
@@ -81,8 +54,5 @@
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     cursor: pointer;
-}
-
-.logger_inactive {
-    filter: blur(1px) grayscale(0.8);
+    user-select: none;
 }
