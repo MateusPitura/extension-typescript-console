@@ -13,6 +13,7 @@
 
 .logger_bubbles {
     display: flex;
+    justify-content: end;
     flex-direction: row;
     column-gap: 0.5rem;
 }
