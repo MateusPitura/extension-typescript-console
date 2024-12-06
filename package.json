@@ -1,8 +1,8 @@
 {
-	"name": "woody",
-	"displayName": "Woody - Console free logging",
-	"version": "1.0.6",
-	"description": "A chrome extension to view logs outside of the console.",
+	"name": "start-console",
+	"displayName": "Star Console",
+	"version": "0.1.0",
+	"description": "A chrome extension to view logs outside of the console integrated with Visual Studio Code extension.",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
