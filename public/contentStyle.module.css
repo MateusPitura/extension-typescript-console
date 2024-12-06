@@ -1,0 +1,87 @@
+.logger_container {
+    position: fixed;
+    z-index: 10000000;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+.logger_container > * {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.logger_bubbles {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+}
+
+.logger_bubble {
+    border-radius: 0.5rem;
+    border: 1px solid;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.bg-blue {
+    background-color: #20a4f3;
+    color: #f6f7f8;
+    border-color: #f6f7f8;
+}
+
+.bg-red {
+    background-color: #ff3366;
+    color: #f6f7f8;
+    border-color: #f6f7f8;
+}
+
+.bg-white {
+    background-color: #f6f7f8;
+    color: #011627;
+    border-color: #011627;
+}
+
+.bg-yellow {
+    background-color: #f2bb05;
+    color: #011627;
+    border-color: #011627;
+}
+
+.logger_list {
+    list-style-type: none;
+}
+
+.logger_list li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    max-width: 50vw;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.logger_x_button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: inherit;
+    cursor: pointer;
+}
+
+.logger_action {
+    color: #f6f7f8;
+    background-color: slategray;
+    border-radius: 0.5rem;
+    border: 1px solid #f6f7f8;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+}
+
+.logger_inactive {
+    filter: blur(1px) grayscale(0.8);
+}
