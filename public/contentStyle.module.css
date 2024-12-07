@@ -47,12 +47,22 @@
 }
 
 .logger_action {
-    color: #f6f7f8;
-    background-color: slategray;
+    color: #fff;
+    background-color: #683D82;
     border-radius: 0.5rem;
-    border: 1px solid #f6f7f8;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     cursor: pointer;
     user-select: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.logger_action:hover {
+    opacity: 0.8;
+}
+
+.logger_toolbar {
+    display: flex;
+    justify-content: end;
+    column-gap: 0.5rem;
 }
