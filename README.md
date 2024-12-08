@@ -40,13 +40,13 @@ This project provides two complementary developer tools to enhance productivity:
 
 **Chrome:**
 
-1. On GitHub, navigate to the Releases tab, download the `.zip` file, and unpack it
+1. On [GitHub](https://github.com/MateusPitura/extension-typescript-console/), navigate to the Releases tab, download the `.zip` file, and unpack it
 
 2. Open the Extensions tab in Chrome, enable `Developer mode` > `Load unpacked`
 
 3. On `localhost`, you will see a button to hide and another to clear
 
-4. When you print something using the 🌠 emoji, it will appear as a snackbar
+4. When you print something using the emoji 🌠, it will appear as a snackbar
 
 **VSCode:**
 
