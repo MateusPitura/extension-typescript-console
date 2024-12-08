@@ -1,13 +1,11 @@
-import * as vscode from 'vscode';
-import { getLogStatementWithText } from './helpers';
+import * as vscode from "vscode";
+import { languageMappingsWithText } from "./constants/configs";
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log(
-    'Congratulations, your extension "Star Console" is now active!'
-  );
+  console.log('Congratulations, your extension "Star Console" is now active!');
 
   const insertLogStatement = vscode.commands.registerCommand(
-    'start-console.insertLogStatement',
+    "start-console.insertLogStatement",
     () => {
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
@@ -18,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
         editor.document.getText(sel)
       );
       vscode.commands
-        .executeCommand('editor.action.insertLineAfter')
+        .executeCommand("editor.action.insertLineAfter")
         .then<void>(() => {
           text.reduce((acc: Promise<any>, _text: string, index: number) => {
             return acc.then((res) => {
@@ -49,17 +47,30 @@ export function activate(context: vscode.ExtensionContext) {
 
 function cursorPlacement() {
   // release the selection caused by inserting
-  vscode.commands.executeCommand('cursorMove', {
-    to: 'right',
-    by: 'line',
+  vscode.commands.executeCommand("cursorMove", {
+    to: "right",
+    by: "line",
     value: 1,
   });
   // position the cursor inside the parenthesis
-  vscode.commands.executeCommand('cursorMove', {
-    to: 'left',
-    by: 'line',
+  vscode.commands.executeCommand("cursorMove", {
+    to: "left",
+    by: "line",
     value: 1,
   });
+}
+
+function getLogStatementWithText(logText: string, languageId: string): string {
+  const templateText = languageMappingsWithText[languageId];
+  if (!templateText) {
+    vscode.window.showErrorMessage(
+      `The language used in this file is not supported.`
+    );
+    return "";
+  }
+
+  const logStatement = templateText.replace(/\{selectedSnippet\}/g, logText);
+  return logStatement;
 }
 
 // this method is called when your extension is deactivated
