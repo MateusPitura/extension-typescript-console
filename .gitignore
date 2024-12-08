@@ -33,3 +33,5 @@ Thumbs.db
 .vscode-test/
 *.vsix
 out/
+dist.pem
+dist.crx
