@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   const insertLogStatement = vscode.commands.registerCommand(
-    'universal-console-utils.insertLogStatement',
+    'start-console.insertLogStatement',
     () => {
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
