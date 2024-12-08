@@ -72,10 +72,9 @@
     column-gap: 0.5rem;
     width: 250px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
     margin-bottom: 0.5rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    max-height: 200px;
+    max-height: 105px;
     overflow-y: auto;
 }

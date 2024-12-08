@@ -1,25 +1,29 @@
-var logger_addToList = (_message: any) => {
-  let message = JSON.stringify(_message);
-  if (message === "{}" || !message) {
-    message = _message.toString();
+var format_messages = (messages: string) => {
+  let messagesFormatted: string[] = [];
+  const [firstMessage, ...restMessages] = messages;
+  for (const message of restMessages) {
+    let messageFormatted;
+    if (typeof message === "object") {
+      messageFormatted = JSON.stringify(message);
+    } else {
+      messageFormatted = message.toString();
+    }
+    messagesFormatted.push(messageFormatted);
   }
+  return firstMessage + messagesFormatted.join(", ");
+};
+
+var logger_addToList = (messages: any) => {
+  const messageForamatted = format_messages(messages);
   document.getElementById("debug_list")?.insertAdjacentHTML(
     "beforeend",
-    `<li class="logger_item log">
-      <p class="logger_text">${message.toString()}</p>
+    `<li class="logger_item">
+      <p class="logger_text">${messageForamatted}</p>
       <button class="logger_close_button">
         <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyMHB4IiBmaWxsPSIjMDAwMDAwIj48cGF0aCBkPSJtMjkxLTI0MC01MS01MSAxODktMTg5LTE4OS0xODkgNTEtNTEgMTg5IDE4OSAxODktMTg5IDUxIDUxLTE4OSAxODkgMTg5IDE4OS01MSA1MS0xODktMTg5LTE4OSAxODlaIi8+PC9zdmc+'/>
       </button>
     </li>`
   );
-  const button = (
-    document.getElementById("debug_list")?.lastChild as HTMLElement
-  ).getElementsByTagName("button")[0];
-  if (button !== null) {
-    button!.onclick = () =>
-      (button!.parentNode?.parentNode as HTMLElement)?.remove();
-  }
-  return;
 };
 
 interface Console {
@@ -46,7 +50,7 @@ var logger_hideAll = (action?: string) => {
     "logger_bubbles"
   )[0] as HTMLElement;
   const list = document.getElementsByClassName("logger_list")[0] as HTMLElement;
-  if (action !== "hide" && bubbles.style.display === "none") { // Unhide
+  if (action !== "hide" && bubbles.style.display === "none") {
     bubbles.style.display = "flex";
     list.style.display = "block";
     localStorage.setItem("logger_is_hidden", "false");
@@ -56,7 +60,7 @@ var logger_hideAll = (action?: string) => {
         <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjZThlYWVkIj48cGF0aCBkPSJNNDgwLTMyMHE3NSAwIDEyNy41LTUyLjVUNjYwLTUwMHEwLTc1LTUyLjUtMTI3LjVUNDgwLTY4MHEtNzUgMC0xMjcuNSA1Mi41VDMwMC01MDBxMCA3NSA1Mi41IDEyNy41VDQ4MC0zMjBabTAtNzJxLTQ1IDAtNzYuNS0zMS41VDM3Mi01MDBxMC00NSAzMS41LTc2LjVUNDgwLTYwOHE0NSAwIDc2LjUgMzEuNVQ1ODgtNTAwcTAgNDUtMzEuNSA3Ni41VDQ4MC0zOTJabTAgMTkycS0xNDYgMC0yNjYtODEuNVQ0MC01MDBxNTQtMTM3IDE3NC0yMTguNVQ0ODAtODAwcTE0NiAwIDI2NiA4MS41VDkyMC01MDBxLTU0IDEzNy0xNzQgMjE4LjVUNDgwLTIwMFptMC0zMDBabTAgMjIwcTExMyAwIDIwNy41LTU5LjVUODMyLTUwMHEtNTAtMTAxLTE0NC41LTE2MC41VDQ4MC03MjBxLTExMyAwLTIwNy41IDU5LjVUMTI4LTUwMHE1MCAxMDEgMTQ0LjUgMTYwLjVUNDgwLTI4MFoiLz48L3N2Zz4='/>
       `;
     }
-  } else { // Hide
+  } else {
     localStorage.setItem("logger_is_hidden", "true");
     bubbles.style.display = "none";
     list.style.display = "none";
