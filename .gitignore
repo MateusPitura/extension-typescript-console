@@ -29,3 +29,7 @@ jspm_packages/
 # Miscellaneous
 .DS_Store
 Thumbs.db
+
+# Extension
+.vscode-test/
+*.vsix
