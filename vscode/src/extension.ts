@@ -46,15 +46,8 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function cursorPlacement() {
-  // release the selection caused by inserting
   vscode.commands.executeCommand("cursorMove", {
     to: "right",
-    by: "line",
-    value: 1,
-  });
-  // position the cursor inside the parenthesis
-  vscode.commands.executeCommand("cursorMove", {
-    to: "left",
     by: "line",
     value: 1,
   });
@@ -73,5 +66,4 @@ function getLogStatementWithText(logText: string, languageId: string): string {
   return logStatement;
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() {}
