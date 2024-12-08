@@ -23,7 +23,6 @@ jspm_packages/
 .vite/
 
 # IDE specific files
-.vscode/
 .idea/
 
 # Miscellaneous
