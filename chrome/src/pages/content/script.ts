@@ -46,7 +46,7 @@ const logger_addToList = (messages: any) => {
 };
 
 interface Console {
-  olog: (arg: any) => void;
+  olog: (...arg: any) => void;
 }
 
 if (typeof console !== "undefined") {
@@ -58,8 +58,8 @@ if (typeof console !== "undefined") {
 }
 
 console.log = (...message) => {
-  console.olog(...message);
-  if ([...message][0].includes("🌠")) {
+  console.olog.apply(console, message);
+  if (message[0].includes("🌠")) {
     logger_addToList(message);
   }
 };
