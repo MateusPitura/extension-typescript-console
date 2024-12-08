@@ -3,24 +3,17 @@ var logger_addToList = (_message: any) => {
   if (message === "{}" || !message) {
     message = _message.toString();
   }
-  document.getElementById("debugList")?.insertAdjacentHTML(
+  document.getElementById("debug_list")?.insertAdjacentHTML(
     "beforeend",
-    `<li class="bg-white log" style="display:block;">
-        <div style="display:flex;width:100%;">
-            <button 
-              style="margin-left:auto;" 
-              class="logger_x_button"
-            >
-                x
-            </button>
-        </div>
-        <div>
-            <p>${message.toString()}</p>
-        </div>
+    `<li class="logger_item log">
+      <p class="logger_text">${message.toString()}</p>
+      <div class="logger_close_button">
+        <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyMHB4IiBmaWxsPSIjMDAwMDAwIj48cGF0aCBkPSJtMjkxLTI0MC01MS01MSAxODktMTg5LTE4OS0xODkgNTEtNTEgMTg5IDE4OSAxODktMTg5IDUxIDUxLTE4OSAxODkgMTg5IDE4OS01MSA1MS0xODktMTg5LTE4OSAxODlaIi8+PC9zdmc+'/>
+      </div>
     </li>`
   );
   const button = (
-    document.getElementById("debugList")?.lastChild as HTMLElement
+    document.getElementById("debug_list")?.lastChild as HTMLElement
   ).getElementsByTagName("button")[0];
   if (button !== null) {
     button!.onclick = () =>

@@ -1,15 +1,15 @@
-var s = document.createElement("script");
-s.src = chrome.runtime.getURL("src/pages/background/index.js");
-(document.head || document.documentElement).appendChild(s);
+var script = document.createElement("script");
+script.src = chrome.runtime.getURL("src/pages/background/index.js");
+(document.head || document.documentElement).appendChild(script);
 
 const body = document.getElementsByTagName("body")[0];
 
 const div = document.createElement("div");
 div.setAttribute("class", "logger_container");
 div.innerHTML = `
-    <ul id="debugList" class="logger_list">
+    <ul id="debug_list" class="logger_list">
     </ul>
-    <div style="display:flex" class="logger_toolbar">
+    <div class="logger_toolbar">
         <div class="logger_bubbles">
             <div id="logger_clear" class="logger_action">
                 <!-- Trash -->

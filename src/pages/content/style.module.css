@@ -1,3 +1,10 @@
+:root{
+    --surface: #f6f7f8;
+    --onSurface: #011627;
+    --primary: #683D82;
+    --secondary: #FDD65D;
+}
+
 .logger_container {
     position: fixed;
     z-index: 10000000;
@@ -18,43 +25,19 @@
     column-gap: 0.5rem;
 }
 
-.bg-white {
-    background-color: #f6f7f8;
-    color: #011627;
-    border-color: #011627;
-}
-
 .logger_list {
     list-style-type: none;
 }
 
-.logger_list li {
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: 1px solid;
-    max-width: 50vw;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.logger_x_button {
-    background-color: transparent;
-    border: none;
-    font-size: 16px;
-    color: inherit;
-    cursor: pointer;
-}
-
 .logger_action {
-    color: #fff;
-    background-color: #683D82;
+    color: var(--surface);
+    background-color: var(--primary);
     border-radius: 0.5rem;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     cursor: pointer;
     user-select: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .logger_action:hover {
@@ -65,4 +48,34 @@
     display: flex;
     justify-content: end;
     column-gap: 0.5rem;
+}
+
+.logger_close_button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logger_close_button:hover {
+    opacity: 0.8;
+}
+
+.logger_text {
+    width: 100%;
+}
+
+
+.logger_item {
+    background-color: var(--surface);
+    color: var(--onSurface);
+    display:flex;
+    column-gap: 0.5rem;
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
 }
