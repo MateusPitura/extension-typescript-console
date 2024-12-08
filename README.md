@@ -15,9 +15,9 @@
 
 This project provides two complementary developer tools to enhance productivity:
 
-- **Chrome Extension:** View console.log outputs directly in your browser without needing to open the Developer Tools
+**Chrome Extension:** view `console.log` outputs directly in your browser without needing to open the Developer Tools
 
-- **VSCode Extension:** Easily insert console.log (or equivalent print statements) into your code across multiple programming languages 
+**VSCode Extension:** easily insert `console.log` (or equivalent print statements) into your code across multiple programming languages 
 
 - [Features](#features)
 - [How to Run](#how-to-run)
