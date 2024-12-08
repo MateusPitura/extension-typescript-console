@@ -1,7 +1,7 @@
 {
 	"name": "star-console",
 	"displayName": "Star Console",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A chrome extension to view logs outside of the console integrated with Visual Studio Code extension.",
 	"license": "MIT",
 	"repository": {
