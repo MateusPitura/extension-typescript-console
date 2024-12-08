@@ -9,6 +9,9 @@
   "engines": {
     "vscode": "^1.95.0"
   },
+  "activationEvents": [
+    "onCommand:star-console.insertLogStatement"
+  ],
   "categories": [
     "Debuggers"
   ],
