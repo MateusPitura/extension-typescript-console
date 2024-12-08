@@ -53,7 +53,10 @@
 
 .logger_item_info {
     display: flex;
+    justify-content: end;
     color: var(--outlined);
+    word-wrap: normal;
+    word-break: normal;
 }
 
 .logger_text {
