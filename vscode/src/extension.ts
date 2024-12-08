@@ -1,5 +1,8 @@
 import * as vscode from "vscode";
-import { languageMappingsWithText } from "./constants/configs";
+import {
+  languageMappingsWithoutText,
+  languageMappingsWithText,
+} from "./constants/configs";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "Star Console" is now active!');
@@ -15,29 +18,51 @@ export function activate(context: vscode.ExtensionContext) {
       const text = editor.selections.map((sel: vscode.Selection) =>
         editor.document.getText(sel)
       );
-      vscode.commands
-        .executeCommand("editor.action.insertLineAfter")
-        .then<void>(() => {
-          text.reduce((acc: Promise<any>, _text: string, index: number) => {
-            return acc.then((res) => {
-              return new Promise<void>((resolve) => {
-                const logToInsert = getLogStatementWithText(
-                  _text,
-                  editor.document.languageId
-                );
-                const range = new vscode.Range(
-                  editor.selections[index].start,
-                  editor.selections[index].end
-                );
-                editor
-                  .edit((editBuilder: vscode.TextEditorEdit) => {
-                    editBuilder.replace(range, logToInsert);
-                  })
-                  .then(() => resolve());
+      if (text[0]) {
+        vscode.commands
+          .executeCommand("editor.action.insertLineAfter")
+          .then<void>(() => {
+            text.reduce((acc: Promise<any>, _text: string, index: number) => {
+              return acc.then((res) => {
+                return new Promise<void>((resolve) => {
+                  const logToInsert = getLogStatementWithText(
+                    _text,
+                    editor.document.languageId
+                  );
+                  const range = new vscode.Range(
+                    editor.selections[index].start,
+                    editor.selections[index].end
+                  );
+                  editor
+                    .edit((editBuilder: vscode.TextEditorEdit) => {
+                      editBuilder.replace(range, logToInsert);
+                    })
+                    .then(() => resolve());
+                });
               });
+            }, Promise.resolve());
+          });
+        return;
+      }
+      text
+        .reduce((acc: Promise<any>, _text: string, index: number) => {
+          return acc.then((res) => {
+            return new Promise<void>((resolve) => {
+              const logToInsert = getLogStatementWithoutText(
+                editor.document.languageId
+              );
+              const range = new vscode.Range(
+                editor.selections[index].start,
+                editor.selections[index].end
+              );
+              editor
+                .edit((editBuilder: vscode.TextEditorEdit) => {
+                  editBuilder.replace(range, logToInsert);
+                })
+                .then(() => resolve());
             });
-          }, Promise.resolve());
-        })
+          });
+        }, Promise.resolve())
         .then(() => cursorPlacement());
       return;
     }
@@ -46,11 +71,19 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function cursorPlacement() {
-  vscode.commands.executeCommand("cursorMove", {
-    to: "right",
-    by: "line",
-    value: 1,
-  });
+  const editor = vscode.window.activeTextEditor;
+  if (!editor) {
+    return;
+  }
+  const position = editor.selection.active;
+  const lineText = editor.document.lineAt(position.line).text;
+  const indexOfChar = lineText.indexOf("🌠");
+
+  if (indexOfChar !== -1) {
+    const newPosition = position.with(position.line, indexOfChar + 3);
+    const newSelection = new vscode.Selection(newPosition, newPosition);
+    editor.selection = newSelection;
+  }
 }
 
 function getLogStatementWithText(logText: string, languageId: string): string {
@@ -64,6 +97,17 @@ function getLogStatementWithText(logText: string, languageId: string): string {
 
   const logStatement = templateText.replace(/\{selectedSnippet\}/g, logText);
   return logStatement;
+}
+
+function getLogStatementWithoutText(languageId: string): string {
+  const templateText = languageMappingsWithoutText[languageId];
+  if (!templateText) {
+    vscode.window.showErrorMessage(
+      `The language used in this file is not supported.`
+    );
+    return "";
+  }
+  return templateText;
 }
 
 export function deactivate() {}

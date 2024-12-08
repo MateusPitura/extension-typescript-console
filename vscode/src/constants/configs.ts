@@ -13,17 +13,17 @@ export const languageMappingsWithText: {[key: string]: string} = {
     vue: "console.log('🌠 {selectedSnippet}: ', {selectedSnippet});",
 };
 
-export const languageMappingsBase: {[key: string]: string} = {
-    c: "printf();",
-    cpp: "cout << \"\";",
-    go: "fmt.Printf()",
-    java: "System.out.println();",
-    javascript: "console.log();",
-    javascriptreact: "console.log();",
-    php: "echo '<pre>';\nvar_dump();\ndie;",
-    python: "print()",
-    ruby: "puts",
-    typescript: "console.log();",
-    typescriptreact: "console.log();",
-    vue: "console.log();",
+export const languageMappingsWithoutText: {[key: string]: string} = {
+    c: "printf(\"🌠 \");",
+    cpp: "cout << \"🌠 \";",
+    go: "fmt.Printf(\"🌠 \")",
+    java: "System.out.println(\"🌠 \");",
+    javascript: "console.log('🌠 ');",
+    javascriptreact: "console.log('🌠 ');",
+    php: "echo '<pre>';\necho '🌠 ';\nvar_dump();\ndie;",
+    python: "print('🌠 ')",
+    ruby: "puts \"🌠 \"",
+    typescript: "console.log(' 🌠 ');",
+    typescriptreact: "console.log(' 🌠 ');",
+    vue: "console.log(' 🌠 ');",
 };
