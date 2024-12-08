@@ -5,6 +5,7 @@
   "description": "This extension is built to ease inserting log statements integrated with Chrome extension.",
   "repository": "https://github.com/MateusPitura/start-console",
   "version": "0.1.0",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.95.0"
   },
