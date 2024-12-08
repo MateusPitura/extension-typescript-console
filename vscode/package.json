@@ -1,9 +1,9 @@
 {
-  "name": "start-console",
+  "name": "star-console",
   "displayName": "Star Console",
   "publisher": "MateusPitura",
   "description": "This extension is built to ease inserting log statements integrated with Chrome extension.",
-  "repository": "https://github.com/MateusPitura/start-console",
+  "repository": "https://github.com/MateusPitura/extension-typescript-console",
   "version": "0.1.0",
   "icon": "icon.png",
   "engines": {
@@ -19,13 +19,13 @@
   "contributes": {
     "commands": [
       {
-        "command": "start-console.insertLogStatement",
+        "command": "star-console.insertLogStatement",
         "title": "Add log statement"
       }
     ],
     "keybindings": [
       {
-        "command": "start-console.insertLogStatement",
+        "command": "star-console.insertLogStatement",
         "key": "shift+alt+l",
         "when": "editorTextFocus"
       }

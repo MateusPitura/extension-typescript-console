@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "Star Console" is now active!');
 
   const insertLogStatement = vscode.commands.registerCommand(
-    "start-console.insertLogStatement",
+    "star-console.insertLogStatement",
     () => {
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
