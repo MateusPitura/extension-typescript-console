@@ -1,5 +1,29 @@
-var format_messages = (messages: string) => {
-  let messagesFormatted: string[] = [];
+let lastMessages = "";
+let messagesRepeatedTimes = 0;
+
+const stringToHex = (str: string) => {
+  return Array.from(str)
+    .map((char) => char.charCodeAt(0).toString(16).padStart(2, "0"))
+    .join("");
+};
+
+const verify_lastMessage = (messages: any) => {
+  if (lastMessages === JSON.stringify(messages)) {
+    messagesRepeatedTimes++;
+    const counter = document.getElementById(stringToHex(lastMessages));
+    if (counter) {
+      counter.innerHTML = (messagesRepeatedTimes + 1).toString();
+    }
+    return true;
+  }
+  lastMessages = JSON.stringify(messages);
+  messagesRepeatedTimes = 0;
+  return false;
+};
+
+const format_messages = (messages: any) => {
+  if (verify_lastMessage(messages)) return;
+  const messagesFormatted = [];
   const [firstMessage, ...restMessages] = messages;
   for (const message of restMessages) {
     let messageFormatted;
@@ -13,17 +37,19 @@ var format_messages = (messages: string) => {
   return firstMessage + messagesFormatted.join(", ");
 };
 
-var logger_addToList = (messages: any) => {
+const logger_addToList = (messages: any) => {
   const messageForamatted = format_messages(messages);
-  document.getElementById("debug_list")?.insertAdjacentHTML(
-    "beforeend",
-    `<li class="logger_item">
+  if (messagesRepeatedTimes === 0) {
+    document.getElementById("debug_list")?.insertAdjacentHTML(
+      "beforeend",
+      `<li class="logger_item">
       <p class="logger_text">${messageForamatted}</p>
-      <button class="logger_close_button">
-        <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyMHB4IiBmaWxsPSIjMDAwMDAwIj48cGF0aCBkPSJtMjkxLTI0MC01MS01MSAxODktMTg5LTE4OS0xODkgNTEtNTEgMTg5IDE4OSAxODktMTg5IDUxIDUxLTE4OSAxODkgMTg5IDE4OS01MSA1MS0xODktMTg5LTE4OSAxODlaIi8+PC9zdmc+'/>
-      </button>
-    </li>`
-  );
+      <button class="logger_item_info" id="${stringToHex(
+        JSON.stringify(messages)
+      )}"/>
+      </li>`
+    );
+  }
 };
 
 interface Console {
@@ -45,7 +71,7 @@ console.log = (...message) => {
   }
 };
 
-var logger_hideAll = (action?: string) => {
+const logger_hideAll = (action?: string) => {
   const bubbles = document.getElementsByClassName(
     "logger_bubbles"
   )[0] as HTMLElement;
@@ -73,7 +99,7 @@ var logger_hideAll = (action?: string) => {
   }
 };
 
-var logger_clearAll = () => {
+const logger_clearAll = () => {
   const list = document.getElementsByClassName("logger_list")[0];
   while (list.firstChild) {
     list.removeChild(list.firstChild);

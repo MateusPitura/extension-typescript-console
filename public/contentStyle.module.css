@@ -1,6 +1,7 @@
 :root{
     --surface: #f6f7f8;
     --onSurface: #011627;
+    --outlined: #808080;
     --primary: #683D82;
     --secondary: #FDD65D;
 }
@@ -50,20 +51,14 @@
     column-gap: 0.5rem;
 }
 
-.logger_close_button {
-    cursor: pointer;
+.logger_item_info {
     display: flex;
-    align-items: center;
-}
-
-.logger_close_button:hover {
-    opacity: 0.8;
+    color: var(--outlined);
 }
 
 .logger_text {
     width: 100%;
 }
-
 
 .logger_item {
     background-color: var(--surface);
@@ -77,4 +72,25 @@
     border-radius: 0.5rem;
     max-height: 105px;
     overflow-y: auto;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.my-extension ::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.my-extension ::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.my-extension ::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.my-extension ::-webkit-scrollbar-thumb:hover {
+  background-color: #555
 }

@@ -5,7 +5,7 @@ script.src = chrome.runtime.getURL("src/pages/background/index.js");
 const body = document.getElementsByTagName("body")[0];
 
 const div = document.createElement("div");
-div.setAttribute("class", "logger_container");
+div.setAttribute("class", "logger_container my-extension");
 div.innerHTML = `
     <ul id="debug_list" class="logger_list">
     </ul>
