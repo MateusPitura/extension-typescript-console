@@ -23,7 +23,7 @@ export const languageMappingsWithoutText: {[key: string]: string} = {
     php: "echo '<pre>';\necho '🌠 ';\nvar_dump();\ndie;",
     python: "print('🌠 ')",
     ruby: "puts \"🌠 \"",
-    typescript: "console.log(' 🌠 ');",
-    typescriptreact: "console.log(' 🌠 ');",
-    vue: "console.log(' 🌠 ');",
+    typescript: "console.log('🌠 ');",
+    typescriptreact: "console.log('🌠 ');",
+    vue: "console.log('🌠 ');",
 };
