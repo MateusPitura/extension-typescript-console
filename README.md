@@ -33,7 +33,7 @@ This project provides two complementary developer tools to enhance productivity:
 🔗 **Integration:** install both to enjoy the full experience and a seamless workflow
 
 <p align="center"> 
-  <img src="link do gif ou vídeo" width="25%"> 
+  <video src="https://github.com/user-attachments/assets/de2b3b9e-9413-4923-8373-d5b9e754eda2"/> 
 </p> 
 
 ## How to Run
