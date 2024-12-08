@@ -7,9 +7,9 @@ var logger_addToList = (_message: any) => {
     "beforeend",
     `<li class="logger_item log">
       <p class="logger_text">${message.toString()}</p>
-      <div class="logger_close_button">
+      <button class="logger_close_button">
         <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyMHB4IiBmaWxsPSIjMDAwMDAwIj48cGF0aCBkPSJtMjkxLTI0MC01MS01MSAxODktMTg5LTE4OS0xODkgNTEtNTEgMTg5IDE4OSAxODktMTg5IDUxIDUxLTE4OSAxODkgMTg5IDE4OS01MSA1MS0xODktMTg5LTE4OSAxODlaIi8+PC9zdmc+'/>
-      </div>
+      </button>
     </li>`
   );
   const button = (
