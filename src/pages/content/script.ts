@@ -1,19 +1,14 @@
 let lastMessages = "";
 let messagesRepeatedTimes = 0;
 
-const stringToHex = (str: string) => {
-  return Array.from(str)
-    .map((char) => char.charCodeAt(0).toString(16).padStart(2, "0"))
-    .join("");
-};
-
 const verify_lastMessage = (messages: any) => {
   if (lastMessages === JSON.stringify(messages)) {
     messagesRepeatedTimes++;
-    const counter = document.getElementById(stringToHex(lastMessages));
-    if (counter) {
-      counter.innerHTML = (messagesRepeatedTimes + 1).toString();
-    }
+    const lastChild = document.getElementById("debug_list")?.lastChild
+      ?.lastChild as HTMLElement;
+    lastChild.innerHTML = `
+        <button class="logger_item_info">${messagesRepeatedTimes + 1}</button>
+      `;
     return true;
   }
   lastMessages = JSON.stringify(messages);
@@ -43,10 +38,8 @@ const logger_addToList = (messages: any) => {
     document.getElementById("debug_list")?.insertAdjacentHTML(
       "beforeend",
       `<li class="logger_item">
-      <p class="logger_text">${messageForamatted}</p>
-      <button class="logger_item_info" id="${stringToHex(
-        JSON.stringify(messages)
-      )}"/>
+        <p class="logger_text">${messageForamatted}</p>
+        <button class="logger_item_info"/>
       </li>`
     );
   }
