@@ -7,7 +7,7 @@ const verify_lastMessage = (messages: any) => {
     const lastChild = document.getElementById("debug_list")?.lastChild
       ?.lastChild as HTMLElement;
     lastChild.innerHTML = `
-        <button class="logger_item_info">${messagesRepeatedTimes + 1}</button>
+        <div class="logger_item_info">${messagesRepeatedTimes + 1}</div>
       `;
     return true;
   }
@@ -39,7 +39,7 @@ const logger_addToList = (messages: any) => {
       "beforeend",
       `<li class="logger_item">
         <p class="logger_text">${messageForamatted}</p>
-        <button class="logger_item_info"/>
+        <div class="logger_item_info"/>
       </li>`
     );
   }
