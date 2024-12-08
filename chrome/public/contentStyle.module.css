@@ -11,6 +11,7 @@
     z-index: 10000000;
     right: 0.5rem;
     bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
 }
 
 .logger_container > * {
@@ -38,6 +39,10 @@
     padding-left: 0.5rem;
     cursor: pointer;
     user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem 0.4rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -61,6 +66,7 @@
 
 .logger_text {
     width: 100%;
+    margin: 0;
 }
 
 .logger_item {
