@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
 import { resolve } from "path";
-import makeManifest from "./utils/plugins/make-manifest";
+import { defineConfig } from "vite";
 import copyContentStyle from "./utils/plugins/copy-content-style";
+import makeManifest from "./utils/plugins/make-manifest";
 
 const root = resolve(__dirname, "src");
 const pagesDir = resolve(root, "pages");

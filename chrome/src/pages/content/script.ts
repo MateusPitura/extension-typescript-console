@@ -97,6 +97,7 @@ const logger_clearAll = () => {
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
+  lastMessages = ""
 };
 
 if (document.getElementById("logger_hide") !== null) {
