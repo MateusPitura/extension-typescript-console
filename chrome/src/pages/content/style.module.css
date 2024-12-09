@@ -8,7 +8,7 @@
 
 .logger_container {
     position: fixed;
-    z-index: 10000000;
+    z-index: 999999999;
     right: 0.5rem;
     bottom: 0.5rem;
     font-family: 'Inter', sans-serif;

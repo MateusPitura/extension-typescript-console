@@ -22,8 +22,14 @@ const format_messages = (messages: any) => {
   const [firstMessage, ...restMessages] = messages;
   for (const message of restMessages) {
     let messageFormatted;
-    if (typeof message === "object") {
-      messageFormatted = JSON.stringify(message);
+    if (message === undefined) {
+      messageFormatted = "undefined";
+    }
+    else if (typeof message === "object") {
+      messageFormatted = JSON.stringify(
+        message,
+        function(k, v) { return v === undefined ? "undefined" : v; } // Format undefined keys (object and arrays)
+      );
     } else {
       messageFormatted = message.toString();
     }
@@ -97,7 +103,7 @@ const logger_clearAll = () => {
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
-  lastMessages = ""
+  lastMessages = "";
 };
 
 if (document.getElementById("logger_hide") !== null) {
