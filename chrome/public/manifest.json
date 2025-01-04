@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Star Console",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A chrome extension to view logs outside of the console integrated with Visual Studio Code extension.",
   "action": {
     "default_icon": "icon-34.png"
