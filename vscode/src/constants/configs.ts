@@ -11,6 +11,7 @@ export const languageMappingsWithText: {[key: string]: string} = {
     typescript: "console.log('🌠 {selectedSnippet}: ', {selectedSnippet});",
     typescriptreact: "console.log('🌠 {selectedSnippet}: ', {selectedSnippet});",
     vue: "console.log('🌠 {selectedSnippet}: ', {selectedSnippet});",
+    shellscript: "echo \"🌠 {selectedSnippet}: ${selectedSnippet}\"",
 };
 
 export const languageMappingsWithoutText: {[key: string]: string} = {
@@ -26,4 +27,5 @@ export const languageMappingsWithoutText: {[key: string]: string} = {
     typescript: "console.log('🌠 ');",
     typescriptreact: "console.log('🌠 ');",
     vue: "console.log('🌠 ');",
+    shellscript: "echo \"🌠 \"",
 };
