@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.3] - 2025-06-20
+
+- Fix version sequence
+
 ## [0.1.2] - 2025-06-20
 
 - Added support to Shell Script
