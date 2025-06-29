@@ -4,7 +4,7 @@
 
 <p> 
   <img src="https://img.shields.io/badge/Release-Dec%202024-green">  
-  <img src="https://img.shields.io/badge/Version-0.1.3-blue">  
+  <img src="https://img.shields.io/badge/Version-0.1.4-blue">  
   <img src="https://img.shields.io/badge/Status-Open-brightgreen">  
   <img src="https://img.shields.io/github/stars/MateusPitura/extension-typescript-console?style=social"> 
 </p> 
@@ -37,6 +37,16 @@ This project provides two complementary developer tools to enhance productivity:
 </p> 
 
 ## How to Run
+
+**For devs:**
+
+1. Update all version references
+
+2. Update the CHANGELOG
+
+3. Inside `vscode/`, compile with `vsce package`
+
+4. Upload the ZIP do Visual Studio Marketplace
 
 **Chrome:**
 
