@@ -46,7 +46,11 @@ This project provides two complementary developer tools to enhance productivity:
 
 3. Inside `vscode/`, compile with `vsce package`
 
-4. Upload the ZIP do Visual Studio Marketplace
+4. Upload the ZIP to Visual Studio Marketplace
+
+5. Create a tag in Git and upload to GitHub
+
+6. Create a new release on GitHub
 
 **Chrome:**
 
