@@ -38,20 +38,6 @@ This project provides two complementary developer tools to enhance productivity:
 
 ## How to Run
 
-**For devs:**
-
-1. Update all version references
-
-2. Update the CHANGELOG
-
-3. Inside `vscode/`, compile with `vsce package`
-
-4. Upload the ZIP to Visual Studio Marketplace
-
-5. Create a tag in Git and upload to GitHub
-
-6. Create a new release on GitHub
-
 **Chrome:**
 
 1. On [GitHub](https://github.com/MateusPitura/extension-typescript-console/), navigate to the Releases tab, download the `.zip` file, and unpack it
@@ -67,6 +53,22 @@ This project provides two complementary developer tools to enhance productivity:
 1. In VSCode search for `Star Console` in extensions tab
 
 2. Select some code and press `Shift` + `Alt` + `L`. This will insert a print statement in the file's programming language, beginning with the emoji 🌠. It also supports empty selections
+
+**For devs:**
+
+1. To test, press `F5`
+
+2. Update the CHANGELOG
+
+3. Update version references
+
+4. Inside `vscode/`, compile with `vsce package`
+
+5. Upload the `.vsix` to Visual Studio Marketplace
+
+6. Create a tag in Git and upload to GitHub
+
+7. Create a new release on GitHub
 
 ## Technologies Used
 
