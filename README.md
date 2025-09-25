@@ -54,21 +54,23 @@ This project provides two complementary developer tools to enhance productivity:
 
 2. Select some code and press `Shift` + `Alt` + `L`. This will insert a print statement in the file's programming language, beginning with the emoji 🌠. It also supports empty selections
 
-**For devs:**
+**VSCode | For devs:**
 
-1. To test, press `F5`
+1. Open a VSCode Window in `vscode/` folder. Install packages with `npm i`
 
-2. Update the CHANGELOG
+2. To test, press `F5`
 
-3. Update version references
+3. Update the CHANGELOG
 
-4. Inside `vscode/`, compile with `vsce package`
+4. Update `version` references and run `npm i` in `vscode/`
 
-5. Upload the `.vsix` to Visual Studio Marketplace
+5. Inside `vscode/`, compile with `vsce package`
 
-6. Create a tag in Git and upload to GitHub
+6. Upload the `.vsix` to Visual Studio Marketplace
 
-7. Create a new release on GitHub
+7. Create a tag in Git and upload to GitHub
+
+8. Create a new release on GitHub
 
 ## Technologies Used
 

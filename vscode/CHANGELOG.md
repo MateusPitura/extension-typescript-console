@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.5] - 2025-10-25
+
+- Using other commands for printing in Go and Python
+
 ## [0.1.3] - 2025-06-20
 
 - Fix version sequence
