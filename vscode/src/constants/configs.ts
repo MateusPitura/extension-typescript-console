@@ -1,5 +1,5 @@
 export const languageMappingsWithText: {[key: string]: string} = {
-    c: "printf(\"🌠 {selectedSnippet}: %d\n\", {selectedSnippet});",
+    c: "printf(\"🌠 {selectedSnippet}: %d\\n\", {selectedSnippet});",
     cpp: "cout << \"🌠 {selectedSnippet}: \" << {selectedSnippet};",
     go: "fmt.Println(\"🌠 {selectedSnippet}:\", {selectedSnippet})",
     java: "System.out.println(\"🌠 {selectedSnippet}: \" + {selectedSnippet});",
@@ -15,7 +15,7 @@ export const languageMappingsWithText: {[key: string]: string} = {
 };
 
 export const languageMappingsWithoutText: {[key: string]: string} = {
-    c: "printf(\"🌠 \n\");",
+    c: "printf(\"🌠 \\n\");",
     cpp: "cout << \"🌠 \";",
     go: "fmt.Println(\"🌠\")",
     java: "System.out.println(\"🌠 \");",
