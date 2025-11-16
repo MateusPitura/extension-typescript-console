@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.7] - 2025-12-25
+
+- Fix: escape line break for C
+
 ## [0.1.6] - 2025-12-25
 
 - Added line break for C print statement
