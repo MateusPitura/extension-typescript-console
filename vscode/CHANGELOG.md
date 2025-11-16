@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.6] - 2025-12-25
+
+- Added line break for C print statement
+
 ## [0.1.5] - 2025-10-25
 
 - Using other commands for printing in Go and Python
