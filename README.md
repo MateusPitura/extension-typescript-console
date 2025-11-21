@@ -9,8 +9,6 @@
   <img src="https://img.shields.io/github/stars/MateusPitura/extension-typescript-console?style=social"> 
 </p> 
 
-> 🚧 This app is under development 🚧
-
 ## Description
 
 This project provides two complementary developer tools to enhance productivity:
